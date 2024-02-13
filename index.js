@@ -26,3 +26,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
       document.body.classList.toggle('darkTheme');
   });
 });
+
+function closeMenu() {
+  // select all the links with the class name nav-link
+  let navLinks = document.querySelectorAll(".nav-link");
+  // loop through each link and add a click event listener
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      // select the checkbox with the id check
+      let checkbox = document.querySelector("#check");
+      // uncheck the checkbox
+      checkbox.checked = false;
+    });
+  });
+}
+
+// run the function after the page loads
+document.addEventListener("DOMContentLoaded", closeMenu);
